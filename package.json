@@ -1,0 +1,40 @@
+{
+  "name": "pet-party-planner",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.16",
+    "@mui/material": "^5.14.17",
+    "@mui/x-date-pickers": "^6.18.1",
+    "bcrypt": "^5.1.1",
+    "dayjs": "^1.11.10",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "klaviyo-api": "^7.1.0-beta.2",
+    "mongoose": "^8.0.0",
+    "next": "14.0.1",
+    "react": "^18",
+    "react-cookie": "^6.1.1",
+    "react-dom": "^18",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/js-cookie": "^3.0.6",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.1",
+    "typescript": "^5"
+  }
+}
