@@ -21,10 +21,7 @@ export async function POST(req: NextRequest) {
   const profileApi = new ProfilesApi(session)
   let profileId = ""
   try {
-
-    const session = new OAuthSession(userId, oauthApi)
-    const profileApi = new ProfilesApi(session)
-    const response = await profileApi.createProfile({
+    const created_profile = await profileApi.createProfile({
       data: {
         type: "profile",
         attributes: {
@@ -38,7 +35,7 @@ export async function POST(req: NextRequest) {
         }
       }
     })
-    profileId = response.body.data.id || ""
+    profileId = created_profile.body.data.id ? created_profile.body.data.id : ""
   } catch (e) {
     return new Response('Error occurred during profile creation', {
       status: 500
@@ -67,6 +64,7 @@ export async function POST(req: NextRequest) {
         }
       }
     })
+    return NextResponse.json({}, {status: 201})
   } catch (e) {
     return new Response('Error occurred during linking profile to a list', {
       status: 500

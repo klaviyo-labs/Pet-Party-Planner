@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
           const attendees = await listApi.getListProfiles(party.listId)
           return new Response(JSON.stringify({party, attendees: attendees.body.data }))
         }
-        return new Response("Not Found", {status: 404})
+        return new Response("Party Not Found", {status: 404})
 
       }
 
