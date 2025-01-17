@@ -139,7 +139,7 @@ The `getListProfiles` response includes a `next` and `prev` page value in `respo
     ```
     cp .env.local.example .env.local
    ```
-   1. Fill out the Client Id and Client Secret. If you don't know where to find that information, read this getting [started with OAuth guide](https://developers.klaviyo.com/en/docs/set-up-oauth)
+   1. Fill out the Client Id and Client Secret. If you don't know where to find that information, read this getting [started with OAuth guide](https://developers.klaviyo.com/en/docs/set_up_oauth)
    `NEXT_PUBLIC_CLIENT_ID` uses the `NEXT_PUBLIC_` prefix so that the client id can be accessed from the browser
    2. For the mongoDB url, this will depend on your preferred way to run MongoDB. The [community Docker image](https://hub.docker.com/r/mongodb/mongodb-community-server) is free, additionally, MongoDB has a free tier cloud-hosted instance called [mongodb atlas](https://www.mongodb.com/atlas/database)
    3. To generate a key value to use for JWT and Encrypting `Refresh Tokens` use:
