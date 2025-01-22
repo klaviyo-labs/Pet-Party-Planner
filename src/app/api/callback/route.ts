@@ -16,6 +16,10 @@ export async function GET(req: NextRequest) {
 
   const verifierCode = req.cookies.get("verifierCode")?.value || ""
 
+  if (params.error=="access_denied"){
+    redirect('/integration-error?error=denial')
+  }
+
   if (params.state && params.code && !params.error) {
     try {
       await oauthApi.createTokens(params.state, verifierCode, params.code, CALLBACK_URL)
