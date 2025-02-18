@@ -22,7 +22,6 @@ const clientId = process.env.NEXT_PUBLIC_CLIENT_ID
   const userId = decoded.userId
   const tokenStorage = new MongooseTokenStorage()
   const tokens = await tokenStorage.retrieve(userId)
-  const refreshToken = tokens.refreshToken
   const revokeHeaders = {
     "Authorization": 'Basic '+btoa(`${clientId}:${secret}`),
     "Content-Type": "application/x-www-form-urlencoded"
@@ -30,7 +29,7 @@ const clientId = process.env.NEXT_PUBLIC_CLIENT_ID
 
   const data = {
     "token_type_hint": "refresh_token",
-    "token": refreshToken
+    "token": tokens.refreshToken
   }
 
   const URLData = new URLSearchParams(data)

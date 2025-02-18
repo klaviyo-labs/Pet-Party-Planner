@@ -1,6 +1,7 @@
 'use client'
 import {Button, Container, Stack} from '@mui/material';
 import Box from "@mui/material/Box";
+import Grid from '@mui/material/Grid';
 import Typography from "@mui/material/Typography";
 import Cookie from "js-cookie";
 
@@ -14,7 +15,6 @@ let integrationTitle = "Integrations"
 // @ts-ignore
 const uninstall = async (e) => {
   const token = Cookie.get("token")
-  let userId: string = Cookie.get("userId") ?? ""
 
   try {
     const res = await fetch("/api/uninstall", {
@@ -34,6 +34,28 @@ const uninstall = async (e) => {
   window.location.reload()
 }
 
+  function SettingsText() {
+    if (integrationConnected) {
+      return (
+      <Grid container spacing={2}>
+        <Grid item xs={8}>
+          <Typography>Klaviyo: connected</Typography>
+        </Grid>
+        <Grid item xs={4}>
+          {<KLSettingsButton/>}
+        </Grid>
+      </Grid>
+      )
+    } else {
+      return <Box alignContent={"center"}>
+      <Typography variant={"body1"} color={"text.primary"}>
+        There are no connected integrations.
+      </Typography>
+    </Box>
+    }
+
+
+  }
   if (integrationConnected) {
     settingText = "Klaviyo: connected"
   }
@@ -41,7 +63,7 @@ const uninstall = async (e) => {
     if (integrationConnected) {
       return (
         <Button 
-          variant="contained"
+          variant="outlined"
           onClick = {(e) => uninstall(e)}>
           Remove integration
         </Button>
@@ -52,19 +74,16 @@ const uninstall = async (e) => {
     <Container maxWidth="md">
       <Stack spacing={2}>
         <Box alignContent={"center"} sx={{paddingTop: 5}}>
-          <Typography variant={"h1"} color={"text.secondary"} sx={{fontWeight: 'bold'}}>
+          <Typography variant={"h2"} sx={{fontWeight: 'bold'}}>
             {settingTitle}
           </Typography>
         </Box>
         <Box alignContent={"center"} sx={{paddingTop: 5}}>
-          <Typography variant={"h4"} color={"text.secondary"} sx={{fontWeight: 'bold'}}>
+          <Typography variant={"h5"} color={"text.secondary"} sx={{fontWeight: 'bold'}}>
             {integrationTitle}
           </Typography>
         </Box>
-        <Box alignContent={"center"} sx={{paddingTop: 0}}>
-          <p>{settingText}</p>
-        </Box>
-        {<KLSettingsButton/>}
+        {<SettingsText/>}
       </Stack>
     </Container>
   )
