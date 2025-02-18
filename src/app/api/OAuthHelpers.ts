@@ -2,7 +2,7 @@ import {CreatedTokens, OAuthApi, RetrievedTokens, TokenStorage} from "klaviyo-ap
 import {UserModel} from "@/app/api/schemas/User";
 import crypto from 'node:crypto';
 
-class MongooseTokenStorage implements TokenStorage {
+export class MongooseTokenStorage implements TokenStorage {
   readonly algorithm = 'aes-256-cbc'; //Using AES encryption
   readonly splitKey = ":"
   readonly key = process.env.DB_ENCRYPTION_KEY || ""
@@ -18,7 +18,7 @@ class MongooseTokenStorage implements TokenStorage {
 
       return {accessToken: result.integration.accessToken, refreshToken: refreshToken}
     } else {
-      throw Error("Token Not Found")
+      throw Error("Token Not Found :(")
     }
   }
 
