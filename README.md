@@ -44,7 +44,8 @@ The basics you need to know are as follows:
 
 ## Disclaimers
 
-This application is for sample purposes only to help jump-start usage of the Klaviyo API.
+This application is for sample purposes only to help understand how to set up OAuth with Klaviyo, and this application should not be used as the basis for any apps.
+
 The JWT user authentication is a placeholder for demo purposes only and should not be implemented in a production environment.
 
 ## How this app integrates with Klaviyo
