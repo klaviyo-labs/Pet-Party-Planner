@@ -16,7 +16,10 @@ export default function IntegrationError() {
     <Container maxWidth="md">
       <Stack spacing={2}>
         <Box alignContent={"center"} sx={{paddingTop: 5}}>
-          <Typography variant={"h2"} color={"text.secondary"} sx={{fontWeight: 'bold'}}>
+        <Typography variant={"h2"} color={"text.secondary"} sx={{fontWeight: 'bold'}}>
+            Error
+          </Typography>
+          <Typography variant={"body1"}>
             {errorText}
           </Typography>
         </Box>
