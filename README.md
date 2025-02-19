@@ -51,7 +51,7 @@ The JWT user authentication is a placeholder for demo purposes only and should n
 ## How this app integrates with Klaviyo
 
 > [!CAUTION]
-> For OAuth apps, it's highly recommended to have all API calls come from the server-side API (as opposed to using our [client-side APIs](https://developers.klaviyo.com/en/reference/create_client_event) which customers use for a variety or reasons) for consistency and use of OAuth specific features.
+> For OAuth apps, all API calls should come from the server-side API (as opposed to using our [client-side APIs](https://developers.klaviyo.com/en/reference/create_client_event) which customers use for a variety or reasons) for consistency and use of OAuth-specific features.
 >
 > If your OAuth app does not make calls via your app's specific OAuth access token, the end user may experience unexpected behavior when using your OAuth app.
 
