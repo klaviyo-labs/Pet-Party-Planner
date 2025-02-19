@@ -59,7 +59,7 @@ The JWT user authentication is a placeholder for demo purposes only and should n
 
 Please ensure you are signed into the correct Klaviyo account before spinning up the app.
 
-This app starts the OAuth flow in the Klaviyo UI with the code living in the client application.
+This app starts the OAuth flow in the Klaviyo UI with the code living in the client application. The install URL defaults to `http://localhost:3000/dashboard`, and the settings URL is `http://localhost:3000/settings`.
 
 The [`OAuthSetup.ts`](/src/app/components/KlaviyoIntegration/OAuthSetup.ts) file contains the code for starting the onboarding flow.
 It creates the Proof Key for Code Exchange (PKCE) codes needed for verifying the authenticity of the token creation call later and constructs the correct Klaviyo.com URL to redirect to.
