@@ -40,8 +40,6 @@ The basics you need to know are as follows:
 
 ### OAuth Connection Flow
 
-Please ensure you are signed into the correct Klaviyo account before spinning up the app.
-
 This app starts the OAuth flow in the Klaviyo UI with the code living in the client application. The install URL defaults to `http://localhost:3000/dashboard`, and the settings URL is `http://localhost:3000/settings`.
 
 The [`OAuthSetup.ts`](/src/app/components/KlaviyoIntegration/OAuthSetup.ts) file contains the code for starting the onboarding flow.
@@ -65,8 +63,6 @@ The user can disconnect the integration either from Klaviyo or by navigating to 
 
 ### Getting the [Klaviyo Public / Site ID](https://help.klaviyo.com/hc/en-us/articles/115005062267)
 
-A common pattern for Klaviyo customers (which we discourage for partner apps) is making client-side API calls to create profiles in Klaviyo or using any other multiple client-side endpoints (which you can see in the [developer portal](https://developers.klaviyo.com/en/reference/api_overview)).
-
 > [!CAUTION]
 > For OAuth apps, it's highly recommended to have all API calls come from the server-side API (as opposed to using our [client-side APIs](https://developers.klaviyo.com/en/reference/create_client_event) which customers use for a variety or reasons) for consistency and use of OAuth specific features.
 >
@@ -78,41 +74,15 @@ In the same file as above, right after a user's `refresh` and `access` tokens ar
 
 This call leverages the `KlaviyoOAuthSession` to connect to the implemented `TokenStorage` and the `AccountsApi.getAccounts` method to simplify this API call and provide a pre-created object for the response.
 
-### Creating a List
+### Pet Party Planning
 
 When the application creates a party, it also creates a Klaviyo list with the same name in the background.
 
-The server-side endpoint to create a party is located in [`/api/parties/route.ts`](/src/app/api/parties/route.ts)
+When adding pets to the party, the server uses the `Klaviyo Node SDK`'s `CreateProfile` endpoint to add the new attendee to the linked Klaviyo account and creates a `profileId`. The `profileId` is then used to subscribe the new attendee to the list created earlier. This is done with the `ProfileApi.subscribeProfiles` endpoint.
 
-Similar to the call above for getting the public ID, this call uses the stored OAuth token created in the OAuth flow early by creating an instance of `OAuthSession` linked to the same customer identifier.
-To create a list, call the `ListsApi.createList` endpoint.
+Custom profile properties, specifically `pet_name` and `pet_type`, are added to the corresponding profile using the `properties` attribute.
 
-### Creating a profile and subscribing to a list
-
-This API call is made from [`/view/parties/[id]/page.tsx`](/src/app/view/parties/[id]/page.tsx) to [`/api/parties/[partyId]/route.ts`](/src/app/api/parties/[partyId]/route.ts)
-
-The server then first uses the `Klaviyo Node SDK`'s `CreateProfile` endpoint. This adds the new attendee to the linked Klaviyo account and creates a `profileId`.
-
-The `profileId` is then used to subscribe the new attendee to the list created earlier. This is done with the `ProfileApi.subscribeProfiles` endpoint.
-
-#### Creating custom properties:
-
-To save a custom property to the profile, in this case, `pet_name` and `pet_type` use the free-form object `properties` attribute.
-
-```
-    properties: {
-        pet_name: "Fido",
-        pet_type: "Dog"
-    }
-```
-
-Note: If you have double opt-in enabled for email consent,
-an email will be sent to the email address to confirm their subscription.
-For testing purposes, we recommend only inputting email addresses you have access to. See [this article](https://developers.klaviyo.com/en/docs/collect_email_and_sms_consent_via_api) to learn more about email consent.
-
-### Fetching Profiles in a List
-
-View this call in the [`/api/parties/[partyId]/route.ts`](/src/app/api/parties/[partyId]/route.ts) file.
+Note: If you have double opt-in enabled for email consent, an email will be sent to the email address to confirm their subscription. For testing purposes, we recommend only inputting email addresses you have access to. See [this article](https://developers.klaviyo.com/en/docs/collect_email_and_sms_consent_via_api) to learn more about email consent.
 
 To view the profiles in a list with OAuth, create an `OAuthSession` and use the `ListsApi.getListProfiles` endpoint again.
 
