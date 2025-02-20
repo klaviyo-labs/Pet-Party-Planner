@@ -18,6 +18,7 @@ export async function POST(req: NextRequest) {
   const user = await AuthenticateUser(creds.data)
   if (user) {
     // @ts-ignore - this is verified to exist in next.config.js on startup
+    // Note: the JWT user authentication is a placeholder for demo purposes only and should not be implemented in a production environment. 
     const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
         expiresIn: "1h",
     });
