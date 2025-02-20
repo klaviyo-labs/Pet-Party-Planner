@@ -121,6 +121,8 @@ The `getListProfiles` response includes a `next` and `prev` page value in `respo
 
 ## Running this Application Locally
 
+You do not need to run this application on your local system. However, here are some instructions to set it up if you would like to try:
+
 1. Clone this repo
 2. Ensure you are using the correct node version (18.18 or later)
 
