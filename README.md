@@ -6,11 +6,7 @@ This app is not designed be used as scaffolding for creating your OAuth app. Rat
 
 ### Features
 
-1. **Creating new users:** Each user represents one Klaviyo customer who will "install" this integration by approving it to access their Klaviyo account.
-2. **Connecting a Klaviyo account:** Go through the OAuth flow and connect an account to a Klaviyo Account.
-3. **Creating a party:** Creating a `party` object saves some simple party details to mongoDB and creates a Klaviyo list to keep attendees' info.
-4. **Party signup for attendees:** A page where a call is made to the server which relays the info to Klaviyo to create a new Klaviyo profile and subscribe them to the list.
-5. **Viewing attendees:** In the app, view the customers who have subscribed to the Klaviyo list.
+This application plans parties for your pets. It uses Klaviyo and a separate database to store all party attendees' info.
 
 ## Prerequisites
 
@@ -34,12 +30,6 @@ The basics you need to know are as follows:
 
 1. `page.tsx` files serves React components to the route composed of the parent folder's names.
 2. `route.ts` files serve API endpoints to the route composed of the parent folder's name.
-
-## Disclaimers
-
-This application is for sample purposes only to help understand how to set up OAuth with Klaviyo, and this application should not be used as the basis for any apps.
-
-The JWT user authentication is a placeholder for demo purposes only and should not be implemented in a production environment.
 
 ## How this app integrates with Klaviyo
 
