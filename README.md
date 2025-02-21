@@ -1,6 +1,6 @@
-# Example OAuth Integration - Pet Party Planner
+# Example OAuth App - Pet Party Planner
 
-The purpose of this application is to provide an example of how Klaviyo's OAuth authentication, combined with the powerful public API, can create a unique Klaviyo OAuth integration. It is intended to help you understand how to successfully set up OAuth with Klaviyo and make calls with our server-side API.
+The purpose of this application is to provide an example of how you can create and authenticate an app with Klaviyo's OAuth authentication. It is intended to help you understand how to successfully set up OAuth with Klaviyo and make calls with our server-side API.
 
 This app is not designed be used as scaffolding for creating your OAuth app. Rather, use this as an educational resource to better understand the OAuth flow.
 
@@ -12,14 +12,14 @@ This application plans parties for your pets. It uses Klaviyo and a separate dat
 
 1. **A Klaviyo account:** [Sign up](https://developers.klaviyo.com/en/docs/create_a_test_account) for a free Klaviyo account, or sign in to your test account if you have an existing Klaviyo account.
 2. **Ensure needed packages are installed:** Ensure you have `node` (18.18 or later) installed plus the below `Tools used in this application` section for more details.
-3. **A Klaviyo Integration** Create a new integration for this sample application. To get help getting started with creating an integration read [started with OAuth guide](https://developers.klaviyo.com/en/docs/create_a_public_oauth_app)
+3. **A Klaviyo App** Create a new app in Klaviyo for this sample application. To get help getting started with creating an app, read the [getting started with OAuth guide](https://developers.klaviyo.com/en/docs/create_a_public_oauth_app)
 
 ## Tools used in this application
 
 - [Next.js](https://nextjs.org/): Next.js framework is used to serve front-end pages as well as host backend endpoints
 - [MongoDB](https://www.mongodb.com/): A NoSQL database used to save application inter
 - [Mongoose](https://mongoosejs.com/): A MongoDB ORM to connect to MongoDB
-- [Klaviyo Api](https://github.com/klaviyo/klaviyo-api-node): The Klaviyo Node SDK is used for integrating with public API easier
+- [Klaviyo API](https://github.com/klaviyo/klaviyo-api-node): The Klaviyo Node SDK is used for integrating with public API easier
 - ... and others. These are the most relevant ones for interacting with Klaviyo.
   See the [package.json](./package.json) for the full list
 
@@ -59,7 +59,7 @@ To read more about how to implement your instance that connects to your preferre
 
 NOTE: Looking inside at `TokenStorage` will show that the `refresh token` is stored encrypted. DO NOT STORE THIS PLAIN TEXT; if a `refresh token` is exposed, it can be exploited to create malicious `access tokens`
 
-The user can disconnect the integration either from Klaviyo or by navigating to the in-app settings page. Clicking `Remove Integration` calls the Klaviyo `revoke` endpoint to revoke access and refresh tokens and disconnect the integration.
+The user can disconnect the app either from Klaviyo or by navigating to the in-app settings page. Clicking `Remove Integration` calls the Klaviyo `revoke` endpoint to revoke access and refresh tokens and disconnect the app.
 
 ### Getting the [Klaviyo Public / Site ID](https://help.klaviyo.com/hc/en-us/articles/115005062267)
 
