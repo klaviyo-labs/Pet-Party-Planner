@@ -7,15 +7,13 @@ const KLAVIYO_AUTHORIZE_URL: string = "https://www.klaviyo.com/oauth/authorize"
   // if you are planning to run an app in production this might want to be an environmental variable
 export const CALLBACK_URL: string = "http://localhost:3000/api/callback"
 // set in the integration settings
-const SCOPE: string = "accounts:read list:write list:read profiles:read profiles:write subscriptions:write"
+const SCOPE: string = "accounts:read lists:write lists:read profiles:read profiles:write subscriptions:write"
 
 
 export const startRedirect = async (): Promise<string> => {
   const verifierCode = createVerifierCode()
   const challengeCode = await createChallengeCode(verifierCode)
   const accountId = Cookie.get("userId") || ""
-
-
   Cookie.set("verifierCode", verifierCode)
 
   // see the docs on why these values are sent here: https://developers.klaviyo.com/en/docs/set-up-oauth#2-app-url-redirects-to-the-klaviyo-authorization-page
@@ -30,4 +28,3 @@ export const startRedirect = async (): Promise<string> => {
 
   return redirectUrl.toString()
 }
-
