@@ -19,7 +19,7 @@ This application plans parties for your pets. It uses Klaviyo and a separate dat
 - [Next.js](https://nextjs.org/): Next.js framework is used to serve front-end pages as well as host backend endpoints
 - [MongoDB](https://www.mongodb.com/): A NoSQL database used to save application inter
 - [Mongoose](https://mongoosejs.com/): A MongoDB ORM to connect to MongoDB
-- [Klaviyo API](https://github.com/klaviyo/klaviyo-api-node): The Klaviyo Node SDK is used for integrating with public API easier
+- [Klaviyo Node SDK](https://github.com/klaviyo/klaviyo-api-node): The Klaviyo Node SDK is used for integrating with public API easier
 - ... and others. These are the most relevant ones for interacting with Klaviyo.
   See the [package.json](./package.json) for the full list
 
@@ -38,9 +38,9 @@ The basics you need to know are as follows:
 >
 > If your OAuth app does not make calls via your app's specific OAuth access token, your app will not be accepted to Klaviyo's app marketplace and the end user may experience unexpected behavior when using your OAuth app.
 
-### OAuth Connection Flow
+### OAuth authorization code flow
 
-This app starts the OAuth flow in the Klaviyo UI with the code living in the client application. The install URL defaults to `http://localhost:3000/dashboard`, and the settings URL is `http://localhost:3000/settings`.
+This app starts the OAuth flow in the Klaviyo UI with the code living in the client application. The installation URL defaults to `http://localhost:3000/dashboard`, and the settings URL is `http://localhost:3000/settings`.
 
 The [`OAuthSetup.ts`](/src/app/components/KlaviyoIntegration/OAuthSetup.ts) file contains the code for starting the onboarding flow.
 It creates the Proof Key for Code Exchange (PKCE) codes needed for verifying the authenticity of the token creation call later and constructs the correct Klaviyo.com URL to redirect to.
