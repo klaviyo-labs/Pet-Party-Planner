@@ -1,6 +1,6 @@
 # Example OAuth App - Pet Party Planner
 
-The purpose of this application is to provide an example of how you can create and authenticate an app with Klaviyo's OAuth authentication. It is intended to help you understand how to successfully set up OAuth with Klaviyo and make calls with our server-side API.
+The purpose of this application is to provide an example of how you can create and authenticate an app with Klaviyo's OAuth authentication. It is designed to help you understand how to successfully set up OAuth with Klaviyo and make calls with our server-side APIs.
 
 This app is not designed be used as scaffolding for creating your OAuth app. Rather, use this as an educational resource to better understand the OAuth flow.
 
@@ -86,10 +86,9 @@ Note: If you have double opt-in enabled for email consent, an email will be sent
 
 To view the profiles in a list with OAuth, create an `OAuthSession` and use the `ListsApi.getListProfiles` endpoint again.
 
-This application does use pagination, which isn't included in the sample application; fortunately, it's easy to use.
 The `getListProfiles` response includes a `next` and `prev` page value in `response.body.data.links` Passing this value into `.getListProfiles("listId", {pageCursor: response.body.data.links.next})` will fetch the next page of results
 
-## Running this Application Locally
+## Running this application locally
 
 You do not need to run this application on your local system. However, here are some instructions to set it up if you would like to try:
 
@@ -105,11 +104,12 @@ You do not need to run this application on your local system. However, here are 
    cp .env.local.example .env.local
    ```
 
-   1. Fill out the Client Id and Client Secret. If you don't know where to find that information, read this getting [started with OAuth guide](https://developers.klaviyo.com/en/docs/create_a_public_oauth_app)
+
+   * Fill out the Client Id and Client Secret. If you don't know where to find that information, read this getting [started with OAuth guide](https://developers.klaviyo.com/en/docs/create_a_public_oauth_app)
       `NEXT_PUBLIC_CLIENT_ID` uses the `NEXT_PUBLIC_` prefix so that the client id can be accessed from the browser
-   2. For the MongoDB url, this will depend on your preferred way to run MongoDB. The [community Docker image](https://hub.docker.com/r/mongodb/mongodb-community-server) is free, additionally, MongoDB has a free tier cloud-hosted instance called [mongodb atlas](https://www.mongodb.com/atlas/database).
-   3. To generate a key value to use for JWT and Encrypting `Refresh Tokens` use:
+   * For the MongoDB url, this will depend on your preferred way to run MongoDB. The [community Docker image](https://hub.docker.com/r/mongodb/mongodb-community-server) is free, additionally, MongoDB has a free tier cloud-hosted instance called [mongodb atlas](https://www.mongodb.com/atlas/database).
+   * To generate a key value to use for JWT and Encrypting `Refresh Tokens` use:
       ```bash
        node -e "const c = require('node:crypto'); console.log(c.randomBytes(32).toString('hex'))"
       ```
-   4. To launch use `npm run dev` (defaults to localhost:3000)
+5. To launch use `npm run dev` (defaults to localhost:3000)
