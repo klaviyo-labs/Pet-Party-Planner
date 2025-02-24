@@ -77,7 +77,7 @@ This call leverages the `KlaviyoOAuthSession` to connect to the implemented `Tok
 
 When the application creates a party, it also creates a Klaviyo list with the same name in the background.
 
-When adding pets to the party, the server uses the `Klaviyo Node SDK`'s `CreateProfile` endpoint to add the new attendee to the linked Klaviyo account and creates a `profileId`. The `profileId` is then used to subscribe the new attendee to the list created earlier. This is done with the `ProfileApi.subscribeProfiles` endpoint.
+When adding pets to the party, the server uses the `Klaviyo Node SDK`'s `CreateProfile` endpoint to add the new attendee to the linked Klaviyo account and create a `profileId`. The `profileId` is then used to subscribe the new attendee to the list created earlier. This is done with the `ProfileApi.subscribeProfiles` endpoint.
 
 Custom profile properties, specifically `pet_name` and `pet_type`, are added to the corresponding profile using the `properties` attribute.
 
