@@ -79,7 +79,8 @@ When adding pets to the party, the server uses the `Klaviyo Node SDK`'s `CreateP
 
 Custom profile properties, specifically `pet_name` and `pet_type`, are added to the corresponding profile using the `properties` attribute.
 
-Note: If you have double opt-in enabled for email consent, an email will be sent to the email address to confirm their subscription. For testing purposes, we recommend only inputting email addresses you have access to. See [this article](https://developers.klaviyo.com/en/docs/collect_email_and_sms_consent_via_api) to learn more about email consent.
+> [!NOTE]
+> If you have double opt-in enabled for email consent, an email will be sent to the email address to confirm their subscription. For testing purposes, we recommend only inputting email addresses you have access to. See [this article](https://developers.klaviyo.com/en/docs/collect_email_and_sms_consent_via_api) to learn more about email consent.
 
 To view the profiles in a list with OAuth, create an `OAuthSession` and use the `ListsApi.getListProfiles` endpoint again.
 
