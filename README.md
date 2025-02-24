@@ -69,7 +69,7 @@ The user can disconnect the app either from Klaviyo or by navigating to the in-a
 
 The Klaviyo public ID verifies which account the created profile should be under. In this application this value is retrieved to ensure that the OAuth flow was successful.
 
-In the same file as above, right after a user's `refresh` and `access` tokens are created [`api/callback/route.ts`](/src/app/api/callback/route.ts), the api call to the Klaviyo `/accounts/` endpoint is made after creating the `access_token` and `refresh_token`.
+In the same file as above, right after a user's `refresh` and `access` tokens are created [`api/callback/route.ts`](/src/app/api/callback/route.ts), a API call to the Klaviyo `/accounts/` endpoint is made.
 
 This call leverages the `KlaviyoOAuthSession` to connect to the implemented `TokenStorage` and the `AccountsApi.getAccounts` method to simplify this API call and provide a pre-created object for the response.
 
