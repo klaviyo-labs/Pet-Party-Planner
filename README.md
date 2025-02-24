@@ -21,7 +21,7 @@ This application plans parties for your pets. It uses Klaviyo and a separate dat
 - [Mongoose](https://mongoosejs.com/): A MongoDB ORM to connect to MongoDB
 - [Klaviyo Node SDK](https://github.com/klaviyo/klaviyo-api-node): The Klaviyo Node SDK is used for integrating with public API easier
 - ... and others. These are the most relevant ones for interacting with Klaviyo.
-  See the [package.json](./package.json) for the full list
+  See the [package.json](./package.json) for the full list.
 
 ## How This App is structured
 
