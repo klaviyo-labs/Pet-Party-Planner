@@ -54,7 +54,7 @@ For this application, the callback routes back to the `/callback` route defined 
 The callback route uses the `Klaviyo Node SDK` to create a `refresh token` and `access token`.
 To allow the `Klaviyo Node SDK` to connect to your token storage solution (in this case, MongoDB) implement an instance of `TokenStorage`.
 This application defines the `TokenStorage` implementation in [`/apis/OAuthHelpers.ts`](/src/app/api/OAuthHelpers.ts).
-To read more about how to implement your instance that connects to your preferred storage method, read the [`Klaviyo Node SDK` `README.md`](https://github.com/klaviyo/klaviyo-api-node?tab=readme-ov-file#tokenstorage)
+To read more about how to implement your instance that connects to your preferred storage method, read the [`Klaviyo Node SDK` `README.md`](https://github.com/klaviyo/klaviyo-api-node?tab=readme-ov-file#tokenstorage).
 
 NOTE: Looking inside at `TokenStorage` will show that the `refresh token` is stored encrypted. DO NOT STORE THIS PLAIN TEXT; if a `refresh token` is exposed, it can be exploited to create malicious `access tokens`
 
