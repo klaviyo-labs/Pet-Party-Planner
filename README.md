@@ -23,7 +23,7 @@ This application plans parties for your pets. It uses Klaviyo and a separate dat
 - ... and others. These are the most relevant ones for interacting with Klaviyo.
   See the [package.json](./package.json) for the full list.
 
-## How This App is structured
+## How this app is structured
 
 This application follows the Next.js app router format for creating a file structure; read more about it [here.](https://nextjs.org/docs/app)
 The basics you need to know are as follows:
