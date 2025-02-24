@@ -59,6 +59,8 @@ To read more about how to implement your instance that connects to your preferre
 > [!CAUTION]
 > Looking inside at `TokenStorage` will show that the `refresh token` is stored encrypted. DO NOT STORE THIS PLAIN TEXT; if a `refresh token` is exposed, it can be exploited to create malicious `access tokens`.
 
+### Disconnecting the app
+
 The user can disconnect the app either from Klaviyo or by navigating to the in-app settings page. Clicking `Remove Integration` calls the Klaviyo `revoke` endpoint to revoke access and refresh tokens and disconnect the app.
 
 ### Getting the [Klaviyo Public / Site ID](https://help.klaviyo.com/hc/en-us/articles/115005062267)
