@@ -38,7 +38,7 @@ The basics you need to know are as follows:
 >
 > If your OAuth app does not make calls via your app's specific OAuth access token, your app will not be accepted to Klaviyo's app marketplace and the end user may experience unexpected behavior when using your OAuth app.
 
-### OAuth authorization code flow
+### Setting up the OAuth flow
 
 This app starts the OAuth flow in the Klaviyo UI with the code living in the client application. The installation URL defaults to `http://localhost:3000/dashboard`, and the settings URL is `http://localhost:3000/settings`.
 
