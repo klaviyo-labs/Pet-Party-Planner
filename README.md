@@ -46,7 +46,7 @@ The [`OAuthSetup.ts`](/src/app/components/KlaviyoIntegration/OAuthSetup.ts) file
 It creates the Proof Key for Code Exchange (PKCE) codes needed for verifying the authenticity of the token creation call later and constructs the correct Klaviyo.com URL to redirect to.
 
 
-Starting the OAuth flow can also be done by a server-side redirect. Additionally, the [Klaviyo Node SDK](https://github.com/klaviyo/klaviyo-api-node/tree/oauth-beta) provides helpers to construct the redirect url and generate PKCE codes. Check out our other [OAuth sample code](https://github.com/klaviyo-labs/node-integration-example) in Klaviyo Labs
+Starting the OAuth flow can also be done by a server-side redirect. Additionally, the [Klaviyo Node SDK](https://github.com/klaviyo/klaviyo-api-node/tree/oauth-beta) provides helpers to construct the redirect URL and generate PKCE codes. To read more about starting the OAuth flow, check out our [Handle your app's OAuth flow guide](https://developers.klaviyo.com/en/docs/handle_your_apps_oauth_flow).
 #### Creating and storing tokens
 Once the user accepts the permissions outlined in the `scope` variable, Klaviyo redirects back to our application as outlined in the `callback_url` parameter.
 For this application, the callback routes back to the `/callback` route defined in [`api/callback/route.ts`](./src/app/api/callback/route.ts).
