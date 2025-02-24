@@ -1,6 +1,6 @@
 # Example OAuth App - Pet Party Planner
 
-The purpose of this application is to provide an example of how you can create and authenticate an app with Klaviyo's OAuth authentication. It is designed to help you understand how to successfully set up OAuth with Klaviyo and make calls with our server-side APIs.
+The purpose of this application is to provide an example of how you can create and authenticate an app with Klaviyo's OAuth authentication. It is designed to help you understand how to successfully set up OAuth with Klaviyo and make calls with our server-side APIs. You can check out other [examples with OAuth sample code](https://github.com/klaviyo-labs/node-integration-example) in Klaviyo Labs.
 
 This app is not designed be used as scaffolding for creating your OAuth app. Rather, use this as an educational resource to better understand the OAuth flow.
 
