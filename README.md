@@ -63,11 +63,6 @@ The user can disconnect the app either from Klaviyo or by navigating to the in-a
 
 ### Getting the [Klaviyo Public / Site ID](https://help.klaviyo.com/hc/en-us/articles/115005062267)
 
-> [!CAUTION]
-> For OAuth apps, it's highly recommended to have all API calls come from the server-side API (as opposed to using our [client-side APIs](https://developers.klaviyo.com/en/reference/create_client_event) which customers use for a variety or reasons) for consistency and use of OAuth specific features.
->
-> If your OAuth app does not make calls via your app's specific OAuth access token, the end user may experience unexpected behavior when using your OAuth app.
-
 The Klaviyo public ID verifies which account the created profile should be under. In this application this value is retrieved to ensure that the OAuth flow was successful.
 
 In the same file as above, right after a user's `refresh` and `access` tokens are created [`api/callback/route.ts`](/src/app/api/callback/route.ts), a API call to the Klaviyo `/accounts/` endpoint is made.
