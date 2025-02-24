@@ -45,7 +45,6 @@ This app starts the OAuth flow in the Klaviyo UI with the code living in the cli
 The [`OAuthSetup.ts`](/src/app/components/KlaviyoIntegration/OAuthSetup.ts) file contains the code for starting the onboarding flow.
 It creates the Proof Key for Code Exchange (PKCE) codes needed for verifying the authenticity of the token creation call later and constructs the correct Klaviyo.com URL to redirect to.
 
-To read more about starting the OAuth flow, check out our [Handle your app's OAuth flow guide](https://developers.klaviyo.com/en/docs/handle_your_apps_oauth_flow).
 
 Starting the OAuth flow can also be done by a server-side redirect. Additionally, the [Klaviyo Node SDK](https://github.com/klaviyo/klaviyo-api-node/tree/oauth-beta) provides helpers to construct the redirect url and generate PKCE codes. Check out our other [OAuth sample code](https://github.com/klaviyo-labs/node-integration-example) in Klaviyo Labs
 
