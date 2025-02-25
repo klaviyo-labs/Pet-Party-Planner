@@ -65,38 +65,38 @@ The user can disconnect the app either from Klaviyo or by navigating to the in-a
 
 ### Getting the [Klaviyo Public / Site ID](https://help.klaviyo.com/hc/en-us/articles/115005062267)
 
-The Klaviyo public ID verifies which account the created profile should be under. In this application this value is retrieved to ensure that the OAuth flow was successful.
+The Klaviyo public ID verifies which account the created profile should be under. In this application, this value is retrieved to ensure that the OAuth flow was successful.
 
 In the same file as above, right after a user's `refresh` and `access` tokens are created [`api/callback/route.ts`](/src/app/api/callback/route.ts), a API call to the Klaviyo `/accounts/` endpoint is made.
 
 This call leverages the `KlaviyoOAuthSession` to connect to the implemented `TokenStorage` and the `AccountsApi.getAccounts` method to simplify this API call and provide a pre-created object for the response.
 
-### Pet Party Planning
+### App functionality
 
 When the application creates a party, it also creates a Klaviyo list with the same name in the background.
 
-When adding pets to the party, the server uses the `Klaviyo Node SDK`'s `CreateProfile` endpoint to add the new attendee to the linked Klaviyo account and create a `profileId`. The `profileId` is then used to subscribe the new attendee to the list created earlier. This is done with the `ProfileApi.subscribeProfiles` endpoint.
+When adding pets to the party, the server uses the Klaviyo Node SDK's `CreateProfile` endpoint to add the new attendee to the linked Klaviyo account and create a `profileId`. The `profileId` is then used to subscribe the new attendee to the list created earlier. This is done with the `ProfileApi.subscribeProfiles` endpoint.
 
 Custom profile properties, specifically `pet_name` and `pet_type`, are added to the corresponding profile using the `properties` attribute.
 
 > [!NOTE]
-> If you have double opt-in enabled for email consent, an email will be sent to the email address to confirm their subscription. For testing purposes, we recommend only inputting email addresses you have access to. See [this article](https://developers.klaviyo.com/en/docs/collect_email_and_sms_consent_via_api) to learn more about email consent.
+> If you have double opt-in enabled for email consent, an email will be sent to the email address to confirm their subscription. For testing purposes, we recommend only inputting email addresses you have access to. [Learn more about email consent.](https://developers.klaviyo.com/en/docs/collect_email_and_sms_consent_via_api)
 
 To view the profiles in a list with OAuth, create an `OAuthSession` and use the `ListsApi.getListProfiles` endpoint again.
 
-The `getListProfiles` response includes a `next` and `prev` page value in `response.body.data.links` Passing this value into `.getListProfiles("listId", {pageCursor: response.body.data.links.next})` will fetch the next page of results
+The `getListProfiles` response includes a `next` and `prev` page value in `response.body.data.links` Passing this value into `.getListProfiles("listId", {pageCursor: response.body.data.links.next})` will fetch the next page of results.
 
 ## Running this application locally
 
 You do not need to run this application on your local system. However, here are some instructions to set it up if you would like to try:
 
-1. Clone this repo
-2. Ensure you are using the correct node version (18.18 or later)
+1. Clone this repo.
+2. Ensure you are using the correct node version (18.18 or later).
 
-   This can be done with: `nvm use`
+   This can be done with: `nvm use`.
 
 3. `npm install`
-4. Copy and fill out `.env.local`
+4. Copy and fill out `.env.local`.
 
    ```
    cp .env.local.example .env.local
@@ -104,10 +104,10 @@ You do not need to run this application on your local system. However, here are 
 
 
    * Fill out the Client Id and Client Secret. If you don't know where to find that information, read this getting [started with OAuth guide](https://developers.klaviyo.com/en/docs/create_a_public_oauth_app)
-      `NEXT_PUBLIC_CLIENT_ID` uses the `NEXT_PUBLIC_` prefix so that the client id can be accessed from the browser
+      `NEXT_PUBLIC_CLIENT_ID` uses the `NEXT_PUBLIC_` prefix so that the client id can be accessed from the browser.
    * For the MongoDB url, this will depend on your preferred way to run MongoDB. The [community Docker image](https://hub.docker.com/r/mongodb/mongodb-community-server) is free, additionally, MongoDB has a free tier cloud-hosted instance called [mongodb atlas](https://www.mongodb.com/atlas/database).
    * To generate a key value to use for JWT and Encrypting `Refresh Tokens` use:
       ```bash
        node -e "const c = require('node:crypto'); console.log(c.randomBytes(32).toString('hex'))"
       ```
-5. To launch use `npm run dev` (defaults to localhost:3000)
+5. To launch use `npm run dev` (defaults to localhost:3000).
