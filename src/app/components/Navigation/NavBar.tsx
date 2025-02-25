@@ -27,6 +27,10 @@ export default function NavBar() {
     router.push('/login')
   }
 
+  const settings = () => {
+    router.push('/settings')
+  }
+
   const logoutLoginButton = () => {
 
     if (cookies.token) {
@@ -57,6 +61,13 @@ export default function NavBar() {
             Pet Party Planner
           </Button>
           <Box sx={{ flexGrow: 1 }} />
+          <Button
+            color={"inherit"}
+            onClick={() => settings()}
+            variant={"text"}
+          >
+            Settings
+          </Button>
           {logoutLoginButton()}
         </Toolbar>
       </AppBar>
