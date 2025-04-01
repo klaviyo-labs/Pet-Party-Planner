@@ -110,4 +110,5 @@ You do not need to run this application on your local system. However, here are 
       ```bash
        node -e "const c = require('node:crypto'); console.log(c.randomBytes(32).toString('hex'))"
       ```
-5. To launch use `npm run dev` (defaults to localhost:3000).
+5. Run MongoDB
+6. To launch use `npm run dev` (defaults to localhost:3000).
