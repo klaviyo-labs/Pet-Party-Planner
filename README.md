@@ -2,7 +2,7 @@
 
 The purpose of this application is to provide an example of how you can create and authenticate an app with Klaviyo's OAuth authentication. It is designed to help you understand how to successfully set up OAuth with Klaviyo and make calls with our server-side APIs. You can check out other [examples with OAuth sample code](https://github.com/klaviyo-labs/node-integration-example) in Klaviyo Labs.
 
-This app is not designed be used as scaffolding for creating your OAuth app. Rather, use this as an educational resource to better understand the OAuth flow.
+This app is not designed be used as scaffolding for creating your OAuth app. Rather, use this as an educational resource to better understand the OAuth flow. For more information, check out our Academy course on [building an OAuth app with Klaviyo](https://academy.klaviyo.com/en-us/courses/build-an-oauth-app-with-klaviyo?utm_source=github).
 
 ### Features
 
