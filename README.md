@@ -2,7 +2,7 @@
 
 The purpose of this application is to provide an example of how you can create and authenticate an app with Klaviyo's OAuth authentication. It is designed to help you understand how to successfully set up OAuth with Klaviyo and make calls with our server-side APIs. You can check out other [examples with OAuth sample code](https://github.com/klaviyo-labs/node-integration-example) in Klaviyo Labs.
 
-This app is not designed be used as scaffolding for creating your OAuth app. Rather, use this as an educational resource to better understand the OAuth flow. For more information, check out our Academy course on [building an OAuth app with Klaviyo](https://academy.klaviyo.com/en-us/courses/build-an-oauth-app-with-klaviyo?utm_source=github).
+This app is not designed be used as scaffolding for creating your OAuth app. Rather, use this as an educational resource to better understand the OAuth flow. For more information, check out our Academy course on [building an OAuth app with Klaviyo](https://academy.klaviyo.com/en-us/courses/build-an-oauth-app-with-klaviyo?utm_source=github_petparty).
 
 ### Features
 
@@ -110,5 +110,5 @@ You do not need to run this application on your local system. However, here are 
       ```bash
        node -e "const c = require('node:crypto'); console.log(c.randomBytes(32).toString('hex'))"
       ```
-5. Run MongoDB
+5. Run MongoDB.
 6. To launch use `npm run dev` (defaults to localhost:3000).
